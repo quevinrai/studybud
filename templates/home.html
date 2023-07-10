@@ -1,20 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudyBuddy - Find study partners around the world!</title>
-</head>
-<body>
+{% extends 'main.html' %}
+
+{% block content %}
+
     <h1>Home Template</h1>
 
     <h2>Names</h2>
     <ul>
         {% for name in names %}
-    
+
             <li>{{name}}</li>
 
         {% endfor %}
     </ul>
-</body>
-</html>
+    
+{% endblock content %}
