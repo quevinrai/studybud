@@ -2,4 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def home(request):
-    return render(request, 'home.html', {'names': ['Harry', 'Ron', 'Hermoine', 'Draco', 'Albus']})
+    rooms = ['Harry', 'Ron', 'Hermoine', 'Draco', 'Albus']
+
+    context = {'rooms': rooms}
+    return render(request, 'home.html', context)
