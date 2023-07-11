@@ -6,3 +6,7 @@ def home(request):
 
     context = {'rooms': rooms}
     return render(request, 'home.html', context)
+
+def room(request, pk):
+    context = {'id': pk}
+    return render(request, 'room.html', context)
