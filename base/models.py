@@ -24,3 +24,6 @@ class Message(models.Model):
 
     def __str__(self):
         return self.body[:50]
+    
+class Topic(models.Model):
+    name = models.CharField(max_length=200)
