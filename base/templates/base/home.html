@@ -5,10 +5,13 @@
     <h1>Home Template</h1>
 
     <h2>Rooms</h2>
-    <a href="{% url 'create-room' %}">Create room...</a>
+
+    <a href="{% url 'create-room' %}">Create Room</a>
+
     <ul>
         {% for room in rooms %}
 
+            <a href="{% url 'update-room' room.id %}">Edit Room</a>
             <li>{{room.host.username}}'s room: <a href="{% url 'room' room.id %}">{{room.name}}</a></li>
 
         {% endfor %}
