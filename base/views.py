@@ -23,7 +23,7 @@ def createRoom(request):
 
         if form.is_valid():
             form.save()
-            redirect('home')
+            return redirect('home')
 
     context = {'form': form}
     return render(request, 'base/room_form.html', context)
@@ -37,7 +37,7 @@ def updateRoom(request, pk):
 
         if form.is_valid():
             form.save()
-            redirect('home')
+            return redirect('home')
 
     context = {'form': form}
     return render(request, 'base/room_form.html', context)
