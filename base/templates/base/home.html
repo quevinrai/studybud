@@ -13,6 +13,7 @@
 
             <li>{{room.host.username}}'s room: <a href="{% url 'room' room.id %}">{{room.name}}</a></li>
             <a href="{% url 'update-room' room.id %}">Edit Room</a>
+            <a href="">Delete Room</a>
 
         {% endfor %}
     </ul>
