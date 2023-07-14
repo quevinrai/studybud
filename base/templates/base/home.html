@@ -9,14 +9,17 @@
 
     <a href="{% url 'create-room' %}">Create Room</a>
 
-    <ul>
+    <div>
         {% for room in rooms %}
-
-            <li>{{room.host.username}}'s room: <a href="{% url 'room' room.id %}">{{room.name}}</a></li>
-            <a href="{% url 'update-room' room.id %}">Edit Room</a>
-            <a href="{% url 'delete-room' room.id %}">Delete Room</a>
-
+            <div>
+                <a href="{% url 'update-room' room.id %}">Edit Room</a>
+                <a href="{% url 'delete-room' room.id %}">Delete Room</a>
+                <span>@{{room.host.username}}</span>
+                <h5>{{room.id}} -- <a href="{% url 'room' room.id %}">{{room.name}}</a></h5>
+                <small>{{room.topic.name}}</small>
+                <hr>
+            </div>
         {% endfor %}
-    </ul>
+    </div>
 
 {% endblock content %}
