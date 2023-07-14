@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.db.models import Q
+from django.contrib import messages
 from django.contrib.auth.models import User
 from .models import Room, Topic
 from .forms import RoomForm
@@ -13,7 +14,7 @@ def loginPage(request):
         try:
             user = User.objects.get(username=username)
         except:
-            pass
+            messages.error(request, 'User does not exist.')
 
     context = {}
     return render(request, 'base/login_register.html', context)
