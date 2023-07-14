@@ -4,8 +4,8 @@ from .forms import RoomForm
 
 # Create your views here.
 def home(request):
-    rooms = Room.objects.all()
-
+    q = request.GET.get('q')
+    rooms = Room.objects.filter(topic__name=q)
     topics = Topic.objects.all()
 
     context = {'rooms': rooms, 'topics': topics}
