@@ -45,7 +45,7 @@ def registerPage(request):
 
 def logoutPage(request):
     logout(request)
-    return render('home')
+    return redirect('home')
 
 def home(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
