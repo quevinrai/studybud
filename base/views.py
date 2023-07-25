@@ -135,11 +135,13 @@ def updateRoom(request, pk):
     if request.method == 'POST':
         topic_name = request.POST.get('topic')
         topic, created = Topic.objects.get_or_create(name=topic_name)
-        form = RoomForm(request.POST, instance=room)
 
-        if form.is_valid():
-            form.save()
-            return redirect('home')
+        room.topic = topic
+        room.name = request.POST.get('name')
+        room.description = request.POST.get('description')
+        room.save()
+        
+        return redirect('home')
 
     context = {'form': form, 'topics': topics, 'room': room}
     return render(request, 'base/room_form.html', context)
