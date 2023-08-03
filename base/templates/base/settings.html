@@ -1,4 +1,5 @@
 {% extends 'main.html' %}
+{% load static %}
 
 {% block content %}
 
@@ -28,7 +29,7 @@
         <div class="settings layout__body">
           <div class="settings__avatar">
             <div class="avatar avatar--large active">
-              <img src="assets/avatar.svg" id="preview-avatar" />
+              <img src="{% static 'images/avatar.svg' %}" id="preview-avatar" />
             </div>
           </div>
           <form class="form" action="#">
